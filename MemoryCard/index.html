@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>神経衰弱</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script>
+      // スクリプト開始時の時間を記録
+    const oldTime = Date.now();
+    setInterval(() => {
+    const currentTime = Date.now();
+      // 経過したミリ秒を取得
+    const diff = currentTime - oldTime;
+      // 分数を得る
+    const sec = Math.floor(diff / 1000);
+
+      // HTMLに文字列を挿入
+    document.querySelector('#log').innerHTML = `${sec}秒が経過`;
+    }, 1000);
+    </script>
+  </head>
+  <body background="../bgNASOg.png">
+    <h1><button id="startBt"><img src="images/start.png" height="50"></button>　　SDGsロゴカードの神経衰弱</h1> 
+    <div id="cardgrid"> </div>
+    <p id="log"></p>
+  </body>
+</html>
+
+

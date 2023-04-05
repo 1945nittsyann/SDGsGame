@@ -1,0 +1,53 @@
+body{
+  background-image:url(../../bgNASOg.png);
+}
+p {font-size:18pt; font-weight:plain; font-family:UD デジタル 教科書体 N-B; }
+h1 {font-size:30pt; font-weight:bold; font-family:UD デジタル 教科書体 N-B; color: blue; } 
+
+
+#cardgrid{
+  /*テーブル全体をセンタリング*/
+  width:90%;
+  margin:10px auto;
+  /*グリッドレイアウトの設定*/
+  display:grid;
+  /*13個の要素を均等の幅で配置*/
+  grid-template-columns:repeat(9,1fr);
+  /*隙間を画面の縦幅の0.5%に設定*/
+  gap:0.5vh;
+}
+/*td要素でなおかつclassにcardがついている要素*/
+div.card{
+  /*要素の縦横比をトランプ画像と同じ2:3に設定*/
+  aspect-ratio: 2 / 2;
+  /* background-color:yellow; */
+  /*コンテナいっぱいに画像を拡大縮小する*/
+  background-size:contain;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: rgb(128, 128, 128) 2px 2px;
+}
+/*div要素でclassにbackがついている要素は裏面画像(importantルール適用)*/
+div.back{
+  background-image:url(../images/back_card.png) !important;
+  background-size: 30px 30px; 
+  border: 1px solid black;
+  border-radius: 10px;
+}
+/*アニメーションの定義（名前はfadeout)*/
+@keyframes fadeout{
+  40%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+div.fadeout{
+  /*使用するアニメーション名*/
+  animation-name:fadeout;
+  /*アニメーション時間*/
+  animation-duration:2s;
+  /*アニメーション終了時の挙動*/
+  animation-fill-mode:forwards; 
+}
